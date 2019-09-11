@@ -160,3 +160,20 @@ body{
   left: 100%;
   border-radius: 0px 5px 5px 0px;
 }
+
+#car-1{
+  top: 100px;
+  left: 60%;
+  background-color: red
+}
+
+#car-2{
+  top: 400px;
+  left: 40%;
+  background-color: #26c5ff;
+}
+#car-3{
+  top: 300px;
+  left: 10%;
+  background-color: green;
+}
