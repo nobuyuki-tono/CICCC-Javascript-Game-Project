@@ -177,3 +177,13 @@ body{
   left: 10%;
   background-color: green;
 }
+
+
+#score{
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 10%;
+  font-size: 35px;
+  background-color:#fff;
+  padding: 10px;
+}
