@@ -44,7 +44,7 @@ body{
 
 #gamearea{
   position: relative;
-  height: 90vh;
+  height: 500px;
   width: 25%;
   left: 35%;
   margin-top: 20px;
@@ -162,18 +162,18 @@ body{
 }
 
 #car-1{
-  top: 100px;
+  /* top: 100px; */
   left: 60%;
   background-color: red
 }
 
 #car-2{
-  top: 400px;
+  /* top: 400px; */
   left: 40%;
   background-color: #26c5ff;
 }
 #car-3{
-  top: 300px;
+  /* top: 300px; */
   left: 10%;
   background-color: green;
 }
