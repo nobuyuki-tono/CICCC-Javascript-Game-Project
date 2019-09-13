@@ -10,15 +10,13 @@ var moveUp = true;
 
 
 
-
+// Game start loop function
 function start(){
   document.getElementById("title").innerHTML="Welcome to 'Drive High Way'";
   document.getElementById("btn").innerHTML="Game Start";
   document.getElementById("score").innerHTML="SCORE: 0";
 
  
-  
-  
   moveOtherCars();
   moveLine();
   collision();
@@ -75,20 +73,22 @@ function moveright(){
   var gamearea = document.getElementById("gamearea");
   var gameareawidth = window.getComputedStyle(gamearea,null).getPropertyValue("width");
   
+  console.log(gameareawidth);
+  
 
   var mycarX = document.getElementById("mycar");
   var mycarLeft = window.getComputedStyle(mycarX,null).getPropertyValue("left");
-
+  console.log(mycarLeft);
   
-
+  // detect the wall
   if(mycarLeft != 0+ "px"){
     moveLeft = true;
   }
 
-  if(mycarLeft == 266.688 + "px"){
+  if(mycarLeft == 297.5 + "px"){
     moveRight = false;
   }
-
+  // 266.688
 }
 
 
@@ -106,7 +106,7 @@ function moveleft(){
   var mycarLeft = window.getComputedStyle(mycarX,null).getPropertyValue("left");
 
   
-
+  // detect the wall
   if(mycarLeft < 265 + "px"){
     moveRight = true;
   }
@@ -133,12 +133,12 @@ function moveup(){
   var mycarTop = window.getComputedStyle(mycarX,null).getPropertyValue("bottom");
 
   
-
+  // detect wall
   if(mycarTop == 430 + "px"){
     moveUp = false;
   }
 
-  if(mycarTop != 435 + "px"){
+  if(mycarTop != 430 + "px"){
     moveDown = true;
   }
 }
@@ -159,7 +159,7 @@ function movedown(){
   var mycarTop = window.getComputedStyle(mycarX,null).getPropertyValue("top");
 
   
-
+  // detect wall
   if(mycarTop == 435+ "px"){
     moveDown = false;
   }
@@ -172,6 +172,7 @@ function movedown(){
 
 
 function moveOtherCars(){
+  // change css property of other cars
   var obj1 = document.getElementById("car-1");
   var topVal = parseInt(obj1.style.top, 10);
   obj1.style.top = (topVal + 4) + "px";
@@ -184,17 +185,19 @@ function moveOtherCars(){
   var topVal = parseInt(obj3.style.top, 10);
   obj3.style.top = (topVal + 4) + "px";
 
-var car1 = document.getElementById("car-1");
-var carHeight = window.getComputedStyle(car1,null).getPropertyValue("top");
-var car2 = document.getElementById("car-2");
-var carHeight2 = window.getComputedStyle(car2,null).getPropertyValue("top");
-var car3 = document.getElementById("car-3");
-var carHeight3 = window.getComputedStyle(car3,null).getPropertyValue("top");
+
+// get the property from css to change other cars position when they go to outside of the gamearea
+  var car1 = document.getElementById("car-1");
+  var carHeight = window.getComputedStyle(car1,null).getPropertyValue("top");
+  var car2 = document.getElementById("car-2");
+  var carHeight2 = window.getComputedStyle(car2,null).getPropertyValue("top");
+  var car3 = document.getElementById("car-3");
+  var carHeight3 = window.getComputedStyle(car3,null).getPropertyValue("top");
 
 
-var gamearea = document.getElementById("gamearea");
-var gameareaHeight = window.getComputedStyle(gamearea,null).getPropertyValue("height");
-//console.log(gameareaHeight);
+  var gamearea = document.getElementById("gamearea");
+  var gameareaHeight = window.getComputedStyle(gamearea,null).getPropertyValue("height");
+  //console.log(gameareaHeight);
 
   
   //console.log(carHeight);
@@ -253,7 +256,7 @@ function moveLine(){
   var lineHeight1 = window.getComputedStyle(linerepeat1,null).getPropertyValue("top");
 
   
-
+  // change css property of lines to repeat them
   if(lineHeight3 == 550 + "px"){
     var line3 = document.getElementById("line3");
     var topVal = parseInt(line3.style.top, 10);
