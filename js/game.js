@@ -1,10 +1,9 @@
-var mycarX = 0;
-var macarY = 0;
 
 var moveLeft = true;
 var moveRight = true;
 var moveDown = true;
 var moveUp = true;
+var score = 0;
 
 
 
@@ -14,7 +13,7 @@ var moveUp = true;
 function start(){
   document.getElementById("title").innerHTML="Welcome to 'Drive High Way'";
   document.getElementById("btn").innerHTML="Game Start";
-  document.getElementById("score").innerHTML="SCORE: 0";
+  document.getElementById("score").innerHTML="SCORE: " + score;
 
  
   moveOtherCars();
@@ -317,3 +316,6 @@ function collision(){
    
 }
 
+function addScore(){
+  score++;
+}
